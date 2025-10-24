@@ -94,33 +94,33 @@ if loc_button:
 
 # 한글 도시명과 영문 도시명 매핑
 gyeonggi_cities = {
-    "수원시": "Suwon",
-    "성남시": "Seongnam",
-    "고양시": "Goyang",
-    "용인시": "Yongin",
-    "부천시": "Bucheon",
-    "안산시": "Ansan",
-    "안양시": "Anyang",
-    "평택시": "Pyeongtaek",
-    "의정부시": "Uijeongbu",
-    "시흥시": "Siheung",
-    "파주시": "Paju",
-    "김포시": "Gimpo",
-    "광명시": "Gwangmyeong",
-    "군포시": "Gunpo",
-    "이천시": "Icheon",
-    "오산시": "Osan",
-    "하남시": "Hanam",
-    "여주시": "Yeoju",
-    "동두천시": "Dongducheon",
-    "과천시": "Gwacheon",
-    "구리시": "Guri",
-    "남양주시": "Namyangju",
-    "양주시": "Yangju",
-    "포천시": "Pocheon",
-    "의왕시": "Uiwang",
-    "가평군": "Gapyeong",
-    "양평군": "Yangpyeong"
+    "수원시": {"name": "Suwon", "lat": 37.2636, "lon": 127.0286},
+    "성남시": {"name": "Seongnam", "lat": 37.4200, "lon": 127.1265},
+    "고양시": {"name": "Goyang", "lat": 37.6584, "lon": 126.8320},
+    "용인시": {"name": "Yongin", "lat": 37.2411, "lon": 127.1776},
+    "부천시": {"name": "Bucheon", "lat": 37.5034, "lon": 126.7660},
+    "안산시": {"name": "Ansan", "lat": 37.3219, "lon": 126.8309},
+    "안양시": {"name": "Anyang", "lat": 37.3943, "lon": 126.9568},
+    "평택시": {"name": "Pyeongtaek", "lat": 36.9947, "lon": 127.0886},
+    "의정부시": {"name": "Uijeongbu", "lat": 37.7381, "lon": 127.0330},
+    "시흥시": {"name": "Siheung", "lat": 37.3806, "lon": 126.8028},
+    "파주시": {"name": "Paju", "lat": 37.7599, "lon": 126.7766},
+    "김포시": {"name": "Gimpo", "lat": 37.6153, "lon": 126.7159},
+    "광명시": {"name": "Gwangmyeong", "lat": 37.4772, "lon": 126.8666},
+    "군포시": {"name": "Gunpo", "lat": 37.3614, "lon": 126.9357},
+    "이천시": {"name": "Icheon", "lat": 37.2795, "lon": 127.4456},
+    "오산시": {"name": "Osan", "lat": 37.1496, "lon": 127.0776},
+    "하남시": {"name": "Hanam", "lat": 37.5399, "lon": 127.2145},
+    "여주시": {"name": "Yeoju", "lat": 37.2950, "lon": 127.6371},
+    "동두천시": {"name": "Dongducheon", "lat": 37.9037, "lon": 127.0604},
+    "과천시": {"name": "Gwacheon", "lat": 37.4292, "lon": 126.9895},
+    "구리시": {"name": "Guri", "lat": 37.5943, "lon": 127.1398},
+    "남양주시": {"name": "Namyangju", "lat": 37.6367, "lon": 127.2140},
+    "양주시": {"name": "Yangju", "lat": 37.7853, "lon": 126.9976},
+    "포천시": {"name": "Pocheon", "lat": 37.8945, "lon": 127.2003},
+    "의왕시": {"name": "Uiwang", "lat": 37.3447, "lon": 126.9686},
+    "가평군": {"name": "Gapyeong", "lat": 37.8315, "lon": 127.5101},
+    "양평군": {"name": "Yangpyeong", "lat": 37.4914, "lon": 127.4875}
 }
 
 korean_city_map = {
@@ -209,7 +209,7 @@ city_list = list(region_city_map[region].keys())
 city_kor = st.selectbox("시/군/구를 선택하세요:", city_list)
 
 # 부산 구별은 lat/lon 사용, 그 외는 기존 방식
-if region in ["부산", "대구", "광주", "울산"]:
+if region in ["부산", "대구", "광주", "울산", "경기도"]:
     city_info = region_city_map[region][city_kor]
     city_eng = city_info["name"]
     city_lat = city_info["lat"]
